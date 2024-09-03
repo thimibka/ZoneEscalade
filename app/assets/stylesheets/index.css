@@ -1,0 +1,28 @@
+.card:hover .card-img-overlay {
+  background-color: #c6b79c;
+  position: absolute;
+  transition: 0.5s;
+}
+
+.card-text-cache {
+  opacity: 0;
+}
+
+.card:hover .card-text {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.card:hover .card-text-cache {
+  color: #4f8844;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.accordion-event-button {
+  flex-flow: column;
+}
+.carousel-inner {
+  height: 400px;
+  padding: 50px;
+}

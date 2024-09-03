@@ -1,0 +1,36 @@
+<div class="flex-column  vh-100 d-flex align-items-center justify-content-center">
+  <div class="container-form">
+    <div class="Title text-center">
+      <h2>S'identifier</h2>
+    </div>
+    <div class="Form text-center">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
+        <% resource.errors.full_messages.each do |msg| %>
+          <div class="alert alert-danger"><%= msg %></div>
+        <% end %>
+        <div class="field">
+          <%= f.label :email, class: "input-text text-center" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input-field text-center m-2"%>
+        </div>
+        <br>
+        <div class="field">
+          <%= f.label :password, class: "input-text text-center" %><br />
+          <%= f.password_field :password, autocomplete: "current-password", class: "input-field text-center m-2"%>
+        </div>
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+      </div>
+      <div class="Validate">
+        <div class="actions d-flex justify-content-around">
+          <%= f.submit "S'identifier", class: "btn-primary hvr-grow m-2 rounded" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="text-center">
+      <%= render "devise/shared/links" %></div>
+  </div>
+</div>

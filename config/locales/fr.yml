@@ -1,0 +1,172 @@
+fr:
+  activerecord:
+    models:
+      user:
+        one: Uilisateur
+        other: Utilisateurs
+      center:
+        one: Salle
+        other: Salles
+      course:
+        one: Cours
+        other: Cours
+      order_course:
+        one: Commandes Cours
+        other: Commandes Cours
+      order_subscription:
+        one: Commandes Abonnements
+        other: Commandes Abonnements
+      subscription:
+        one: Abonnement
+        other: Abonnements
+    errors:
+      messages:
+        record_invalid: 'La validation a échoué : %{errors}'
+        restrict_dependent_destroy:
+          has_one: Vous ne pouvez pas supprimer l'enregistrement car un(e) %{record}
+            dépendant(e) existe
+          has_many: Vous ne pouvez pas supprimer l'enregistrement parce que les %{record}
+            dépendants existent
+  helpers:
+    label:
+      user:
+        first_name: Prénom
+        last_name: Nom
+        center: Salle
+        centers: Salles
+        subscriptions: Abonnements
+        birth_date: Date de Naissance
+        is_admin: Administrateur
+        order_subscriptions: Commandes Abonnements
+        order_courses: Commandes Cours
+        created_at: Profil créer le
+        updated_at: Mise à jour le
+      center:
+        name: Nom
+        users: Utilisateurs
+        courses: Cours
+        thumbnail: Vignette
+        created_at: Salle créer le
+        updated_at: Mis à jour le
+      course:
+        name: Nom
+        center: Salle
+        max_attendees: Nombres de places
+        start_time: Heure de début
+        end_time: Heure de fin
+        week_day: Jour
+        price: Prix
+        created_at: Cours créer le
+        updated_at: Mis à jour le
+      order_course:
+        user: Utilisateur
+        course: Cours
+        date: Date du cours
+        created_at: Commandé le
+        updated_at: Mis à jour le
+      order_subscription:
+        user: Utilisateur
+        datetime: Date
+        subscription: Abonnement
+        created_at: Commandé le 
+        updated_at: Mis à jour le
+      subscription:
+        name: Nom
+        price: Prix
+        duration: Durée (jours)
+        created_at: Date de création
+        updated_at: Mis à jour le
+        order_subscriptions: Commandes
+      coworking:
+        title: Titre
+        subtitle: Sous Titre
+        content: Contenu
+        center: Salle
+        created_at: Date de création
+        updated_at: Mis à jour le
+      loisir: 
+        title: Titre
+        subtitle: Sous Titre
+        content: Contenu
+        center: Salle
+        created_at: Date de création
+        updated_at: Mis à jour le
+      relaxation:
+        title: Titre
+        subtitle: Sous Titre
+        content: Contenu
+        center: Salle 
+        created_at: Date de création
+        updated_at: Mis à jour le
+      restauration:
+        title: Titre
+        subtitle: Sous Titre
+        content: Contenu
+        center: Salle
+        created_at: Date de création
+        updated_at: Mis à jour le
+  administrate:
+    fields:
+      active_storage:
+        add: Ajouter
+        attachment: Image
+        no_attachment: Aucune image
+        remove: Supprimer
+        replace: Remplacer
+
+
+  date:
+      abbr_day_names: [Dim, Lun, Mar, Mer, Jeu, Ven, Sam]
+      abbr_month_names: [~, Jan, Fév, Mar, Avr, Mai, Jun, Jul, Août, Sep, Oct, Nov, Déc]
+      day_names: [Dimanche, Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi]
+      formats:
+        day_month: "%b %d"
+        default: "%d-%m-%Y"
+        hour: "%H:%M"
+        long: "%A %d %B %Y"
+        long_month: "%d %B %Y"
+        month_abbr: "%d %b %Y"
+  simple_calendar:
+      previous: "<<"
+      next: ">>"
+      week: Semaine
+  
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: doit être accepté(e)
+      blank: doit être rempli(e)
+      confirmation: ne concorde pas avec %{attribute}
+      empty: doit être rempli(e)
+      equal_to: doit être égal à %{count}
+      even: doit être pair
+      exclusion: n'est pas disponible
+      greater_than: doit être supérieur à %{count}
+      greater_than_or_equal_to: doit être supérieur ou égal à %{count}
+      in: doit être dans l'intervalle %{count}
+      inclusion: n'est pas inclus(e) dans la liste
+      invalid: n'est pas valide
+      less_than: doit être inférieur à %{count}
+      less_than_or_equal_to: doit être inférieur ou égal à %{count}
+      model_invalid: 'Validation échouée : %{errors}'
+      not_a_number: n'est pas un nombre
+      not_an_integer: doit être un nombre entier
+      odd: doit être impair
+      other_than: doit être différent de %{count}
+      present: doit être vide
+      required: doit exister
+      taken: est déjà utilisé(e)
+      too_long:
+        one: est trop long (pas plus d'un caractère)
+        other: est trop long (pas plus de %{count} caractères)
+      too_short:
+        one: est trop court (au moins un caractère)
+        other: est trop court (au moins %{count} caractères)
+      wrong_length:
+        one: ne fait pas la bonne longueur (doit comporter un seul caractère)
+        other: ne fait pas la bonne longueur (doit comporter %{count} caractères)
+    template:
+      body: 'Veuillez vérifier les champs suivants : '
+      header:
+        one: 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreur'
+        other: 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreurs'

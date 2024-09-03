@@ -1,0 +1,113 @@
+    <!--bannière-->
+<section class="jumbotron jumbotron-fluid text-center">
+  <div class="container-banner ">
+    <%= image_tag("bann.jpg", class: "banpic w-100")%>
+  </div>
+</section>
+<div>
+  <h3 class=" text-center m-5 ">Nos services</h3>
+</div>
+<!--Card de nos services-->
+<div class="album ">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow bg-dark text-white">
+          <%= image_tag("climb2.jpg", class: "card-img-top") %>
+          <div class="card-img-overlay">
+            <h2 class="card-text d-flex justify-content-start "> BLOCS</h2>
+            <h4 class="card-text-cache d-flex justify-content-center align-items-center"><%= link_to "Decouverte des blocs", blocks_path %> </h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow bg-dark text-white">
+          <%= image_tag("climb3.png", class: "card-img-top") %>
+          <div class="card-img-overlay">
+            <h2 class="card-text d-flex justify-content-start "> VOIES</h2>
+            <h4 class="card-text-cache d-flex justify-content-center"><%= link_to "Decouverte des voies", routes_path %> </h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 ">
+        <div class="card mb-4 box-shadow bg-dark text-white ">
+          <%= image_tag("hamburger.jpg", class: "card-img-top ") %>
+          <div class="card-img-overlay">
+            <h2 class="card-text d-flex justify-content-start "> RESTAURATION</h2>
+            <% if !user_signed_in? %>
+              <h4 class="card-text-cache d-flex justify-content-center"><%= link_to "Une petite faim?", restaurations_path %> </h4>
+            <% else %>
+              <h4 class="card-text-cache d-flex justify-content-center"><%= link_to "Une petite faim dans votre salle ?", restauration_path(current_user.center.id) %> </h4>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow bg-dark text-white">
+          <%= image_tag("spa.jpg", class: "card-img-top") %>
+          <div class="card-img-overlay">
+            <h2 class="card-text d-flex justify-content-start "> DETENTE</h2>
+            <% if !user_signed_in? %>
+            <h4 class="card-text-cache d-flex justify-content-center"><%= link_to "Espace détente", relaxations_path %></h4>
+            <% else %>
+            <h4 class="card-text-cache d-flex justify-content-center"><%= link_to "Espace détente dans votre salle", relaxation_path(current_user.center.id) %></h4>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow bg-dark text-white">
+          <%= image_tag("cow.jpg", class: "card-img-top") %>
+          <div class="card-img-overlay">
+            <h2 class="card-text d-flex justify-content-start "> COWORKING</h2>
+            <% if !user_signed_in? %>
+            <h4 class="card-text-cache d-flex justify-content-center"> <%= link_to " Espace coworking", coworkings_path %></h4>
+            <% else %>
+            <h4 class="card-text-cache d-flex justify-content-center"> <%= link_to " Espace coworking dans votre salle", coworking_path(current_user.center.id) %></h4>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow bg-dark text-white">
+          <%= image_tag("loisirs.jpg", class: "card-img-top") %>
+          <div class="card-img-overlay">
+            <h2 class="card-text d-flex justify-content-start "> LOISIRS</h2>
+            <% if !user_signed_in? %>
+            <h4 class="card-text-cache d-flex justify-content-center"> <%= link_to "Espace loisirs", loisirs_path %></h4>
+            <% else %>
+            <h4 class="card-text-cache d-flex justify-content-center"> <%= link_to "Espace loisirs dans votre salle", loisir_path(current_user.center.id) %></h4>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <h3 class=" text-center m-5 ">Nos salles</h3>
+</div>
+<div>
+<div class="swiper-container">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper d-flex align-items-start text-center">
+      <% @center.each do |center| %>
+        <div class="swiper-slide mr-2">
+          <p><%= center.name %></p>
+          <% if center.thumbnail.attached?%>
+            <%= image_tag center.thumbnail, class: "img-carousel" %>
+          <% else %>
+            <%= image_tag("climb1.jpg", class: "img-carousel") %>
+          <% end %>
+          <%= button_to "Voir la salle", center_path(center.id), class: "btn btn-info btn-index-page ", method: "get" %>
+        </div>
+      <% end %>
+    </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+     
+  </div>
+   <div class="swiper-pagination"></div>
+  </div>
+  </div>
+  <%= javascript_include_tag('homepage.js') %>
